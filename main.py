@@ -3,19 +3,13 @@ from discord.ext import commands
 import youtube_dl
 import asyncio
 
-default_intents = discord.Intents.default()
-default_intents.members = True
-client = discord.Client(intents=default_intents)
+
 bot = commands.Bot(command_prefix= "!", description="bot d'AMIS IRL créé par Abdellah Islah")
 musics = {}
 ytdl = youtube_dl.YoutubeDL()
 @bot.event
 async def on_ready():
   print("Le bot est prêt")
-@client.event
-async def on_member_join(member):
-    general_channel = client.get_channel(877897089001082885)
-    general_channel.send(f"Bienvenue sur le serveur {member.display_name} !") 
 @bot.command()
 async def islahinfo(ctx):
   message = "Islah est un développeur qui me programme mtn il a 5 documentation ouvertes devant lui il commis des erreurs et il est conny springer s'il devient chauve ahaha!!!!!"  
